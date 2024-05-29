@@ -4,11 +4,69 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Shaurya</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
+    <button class="signup-btn">Click me!</button>
+    <div class="overlay hidden">
+        <div class="form">
+            <form>
 
+                <div class="name">
+                    <label for="name"> Name : </label>
+                    <input type="text" id="name" placeholder="type">
+                </div>
+
+                <div class="email">
+                    <label for="email">Email : </label>
+                    <input type="text" id="email" placeholder="type">
+                </div>
+
+                <div class="password">
+                    <label for="password">Password : </label>
+                    <input type="password" id="password" placeholder="type">
+                </div>
+
+                <div class="phonenum">
+                    <label for="phonenum">Phone_Number</label>
+                    <input type="text" id="phonenum" placeholder="type">
+                </div>
+
+                <div class="gender">
+                    <label>Gender : </label><br>
+
+                    <input type="radio" name="gender" id="male" value="male">
+                    <label for="male">Male </label>
+                    <input type="radio" name="gender" id="female" value="female">
+                    <label for="female">Female </label>
+                </div>
+
+                <div class="sports">
+                    <label>Sports : </label><br>
+
+                    <input type="checkbox" name="sports" id="cricket" value="cricket">
+                    <label for="cricket">Cricket</label>
+
+                    <input type="checkbox" name="sports" id="volleyball" value="volleyball">
+                    <label for="volleyball">Volleyball</label>
+
+                    <input type="checkbox" name="sports" id="football" value="football">
+                    <label for="football">Football</label>
+
+                    <input type="checkbox" name="sports" id="handball" value="handball">
+                    <label for="handball">Handball</label>
+
+                    <input type="checkbox" name="sports" id="relay" value="relay">
+                    <label for="relay">Relay</label>
+                </div>
+            </form>
+            <button class="btn-submit">Submit</button>
+            <button class=" btn-close">X</button>
+        </div>
+    </div>
 </body>
+<script src="app.js"></script>
 
 </html>
