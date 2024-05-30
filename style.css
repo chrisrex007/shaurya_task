@@ -1,11 +1,48 @@
+/*https://shauryafest.in/assets/landing-page-048aa2d7.jpg*/
+
+.shourya-logo {
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    width: 150px;
+    height: 73px;
+    background-image: url("https://shauryafest.in/assets/logo-shaurya-bd7e4925.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-size: auto;
+    margin: 20px 40px;
+
+}
+
+.signup-btn-container {
+    position: relative;
+    width: 100%;
+    height: 98vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .signup-btn {
+    font-family: sans-serif;
+    font-weight: 700;
+    color: white;
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%);
-    scale: 3;
-    background-color: lightcyan;
-    border: solid black 1px;
+    transform: translate(-50%, -50%) scale(3);
+    background-color: darkslategrey;
+    /* border: 1px solid black; */
+    border-radius: 3rem;
+    padding: 1rem 2rem 1rem 2rem;
+}
+
+.signup-btn:hover {
+    color: yellow;
+    box-shadow:
+        inset 0 -3em 3em rgb(0 255 0 / 30%),
+        0 0 0 2px white,
+        0.3em 0.3em 4em blue;
 }
 
 .overlay {
@@ -30,4 +67,19 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+}
+
+html {
+    background: linear-gradient(0deg, rgba(0, 0, 0, .5), rgba(0, 0, 0, .5)),
+        url("https://shauryafest.in/assets/landing-page-048aa2d7.jpg");
+    background-size: cover;
+    background-attachment: fixed;
+    background-position-y: bottom;
+    background-position-x: right;
+}
+
+
+html,
+body {
+    height: 100%;
 }
