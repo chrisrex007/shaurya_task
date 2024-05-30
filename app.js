@@ -2,6 +2,8 @@ const btn = document.querySelector(".signup-btn");
 const overlay = document.querySelector(".overlay");
 const closebtn = document.querySelector(".btn-close");
 const form = document.querySelector("form");
+const count = document.querySelector(".count");
+let countvar = (count.innerText);
 
 btn.onclick = function () {
     openModal();
@@ -14,13 +16,20 @@ closebtn.onclick = function () {
     overlay.classList.toggle("hidden");
 }
 
-const submit = document.querySelector(".btn-submit");
-submit.onclick = function () {
-    const name = document.querySelector("#name");
-    const email = document.querySelector("#email");
-    const password = document.querySelector("#password");
-    const phonenum = document.querySelector("#phonenum");
+function logData(name, email, password, phonenum, isGender, isSports) {
+    console.log(`Name = ${name.value}`);
+    console.log(`Email = ${email.value}`);
+    console.log(`Password = ${password.value}`);
+    console.log(`Phone Number = ${phonenum.value}`);
+    console.log(`Gender = ${isGender[0].defaultValue}`);
+    console.log("Below is the List of the Sports you are interested in!");
+    for (i = 0; i < isSports.length; i++) {
+        console.log(isSports[i].defaultValue);
+    }
+}
 
+
+function validation(name, email, password, phonenum) {
     // For Checking Numericals in name
     let regex = /\d/;
     if (regex.test(name.value)) {
@@ -67,13 +76,35 @@ submit.onclick = function () {
         return;
     }
 
-    console.log(`Name = ${name.value}`);
-    console.log(`Email = ${email.value}`);
-    console.log(`Password = ${password.value}`);
-    console.log(`Phone Number = ${phonenum.value}`);
-    console.log(`Gender = ${isGender[0].defaultValue}`);
-    console.log("Below is the List of the Sports you are interested in!");
-    for (i = 0; i < isSports.length; i++) {
-        console.log(isSports[i].defaultValue);
-    }
+    logData(name, email, password, phonenum, isGender, isSports);
+    updateCount();
+    refresh(name, email, password, phonenum, isGender, isSports);
+}
+
+function updateCount() {
+    countvar++;
+    count.innerText = countvar;
+}
+
+function refresh(name, email, password, phonenum, isGender, isSports) {
+    name.value = "";
+    email.value = "";
+    password.value = "";
+    phonenum.value = "";
+    isGender[0].checked = false;
+    isSports.forEach(element => {
+        element.checked = false;
+    });
+
+}
+
+const submit = document.querySelector(".btn-submit");
+
+submit.onclick = function () {
+    const name = document.querySelector("#name");
+    const email = document.querySelector("#email");
+    const password = document.querySelector("#password");
+    const phonenum = document.querySelector("#phonenum");
+
+    validation(name, email, password, phonenum);
 }
