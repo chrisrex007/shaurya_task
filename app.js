@@ -4,8 +4,10 @@ const closebtn = document.querySelector(".btn-close");
 const form = document.querySelector("form");
 const count = document.querySelector(".count");
 let COUNT = parseInt(localStorage.getItem("countvar"));
+if (!COUNT) {
+    localStorage.setItem("countvar", 0);
+}
 count.innerText = COUNT;
-
 
 btn.onclick = function () {
     toggleModal();
