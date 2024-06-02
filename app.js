@@ -6,6 +6,7 @@ const count = document.querySelector(".count");
 let COUNT = parseInt(localStorage.getItem("countvar"));
 if (!COUNT) {
     localStorage.setItem("countvar", 0);
+    COUNT = parseInt(localStorage.getItem("countvar"));
 }
 count.innerText = COUNT;
 
